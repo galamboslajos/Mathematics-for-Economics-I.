@@ -3,7 +3,7 @@ title: "Mathematics for Economics"
 author: "Lajos Galambos"
 format: html
 ---
-This is file contains the R code for the "Mathematics for Economics" preparation. I recreate plots, figures, diagramms for the sake of practicing. 
+This is file contains the R code for the "Mathematics for Economics" preparation. I recreate plots, figure, diagramms for the sake of practicing. 
 
 ```{r}
 ##################### Figure 1 #####################
@@ -45,4 +45,30 @@ print(p1)
 # Save the plot as a PNG image
 ggsave("Sign_Diagram.png", plot = p1, width = 6, height = 4, dpi = 300)
 ```
+
+```{r}
+##################### Table 1 #####################
+##################### Interval Notation #####################
+# Load required packages
+library(tibble)
+library(knitr)
+
+# Create a data frame
+df <- tibble(
+  Notation = c("(a, b)", "[a, b]", "(a, b]", "[a, b)"),
+  Name = c("The open interval from a to b.",
+           "The closed interval from a to b.",
+           "A half-open interval from a to b.",
+           "A half-open interval from a to b."),
+  `The interval consists of all x satisfying:` = c("$a < x < b$", "$a \\leq x \\leq b$", "$a < x \\leq b$", "$a \\leq x < b$")
+)
+
+# Create a LaTeX table
+table <- kable(df, "latex", escape = FALSE)
+
+# Save the LaTeX table to a file
+writeLines(table, "Notation.tex")
+```
+
+
 

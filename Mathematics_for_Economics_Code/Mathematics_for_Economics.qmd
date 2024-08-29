@@ -6,6 +6,8 @@ format: html
 This is file contains the R code for the "Mathematics for Economics" preparation. I recreate plots, figure, diagramms for the sake of practicing. 
 
 ```{r}
+##################### Figure 1 #####################
+##################### Inequalities #####################  
 # Load required package
 library(ggplot2)
 

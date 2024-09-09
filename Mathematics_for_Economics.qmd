@@ -3,7 +3,7 @@ title: "Mathematics for Economics"
 author: "Lajos Galambos"
 format: html
 ---
-This is file contains the R code for the "Mathematics for Economics" preparation. I recreate plots, figure, diagramms for the sake of practicing. 
+This is file contains the R code for the "Mathematics for Economics" preparation. I recreate plots, figure, diagrams for the sake of practicing. 
 
 ```{r}
 ##################### Figure 1 #####################
@@ -71,4 +71,38 @@ writeLines(table, "Notation.tex")
 ```
 
 
+
+```{r}
+##################### Figure 2 #####################
+##################### Absolute Value #####################
+
+# Create a data frame for each expression
+df1 <- data.frame(expression = "7 to 2", x_start = 2, x_end = 7, y = 2, color = "Positive")
+df2 <- data.frame(expression = "-2 to -7", x_start = -7, x_end = -2, y = 1, color = "Negative")
+
+# Combine the data frames
+df <- rbind(df1, df2)
+
+# Create a ggplot object
+p1 <- ggplot(df, aes(x_start, y, xend = x_end, yend = y, color = color)) +
+  geom_segment(size = 2) +
+  geom_vline(xintercept = c(2, 7, -2, -7), linetype = "dashed") +
+  scale_color_manual(values = c("Positive" = "green", "Negative" = "red")) +
+  scale_y_continuous(breaks = c(1, 2), labels = c("-2 to -7", "7 to 2")) +
+  scale_x_continuous(breaks = seq(-8, 8, by = 1)) +
+  labs(color = "") +
+  ggtitle(expression(paste("|", "x"[1], " - ", "x"[2], "| = |", "x"[2], " - ", "x"[1], "|"))) +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "white", colour = "black", size = 1, linetype = "solid"),
+        axis.title = element_blank(),
+        plot.title = element_text(hjust = 0.5))
+
+# Print the plot
+print(p1)
+
+# Save the plot as a PNG image
+ggsave("Distance_Diagram.png", plot = p1, width = 6, height = 4, dpi = 300)
+```
 

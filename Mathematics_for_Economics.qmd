@@ -106,3 +106,47 @@ print(p1)
 ggsave("Distance_Diagram.png", plot = p1, width = 6, height = 4, dpi = 300)
 ```
 
+```{r}
+##################### Figure 3 #####################
+##################### Profit Equation #####################
+# Define the cost, revenue, and profit functions
+cost <- function(x) 20*x + 2000
+revenue <- function(x) 75*x
+profit <- function(x) revenue(x) - cost(x)
+
+# Create a data frame of quantities
+df <- data.frame(Quantity = 1:400)
+
+# Calculate the cost, revenue, and profit for each quantity
+df$Cost <- cost(df$Quantity)
+df$Revenue <- revenue(df$Quantity)
+df$Profit <- profit(df$Quantity)
+
+# Create a ggplot object
+p1 <- ggplot(df, aes(Quantity)) +
+  geom_line(aes(y = Cost, color = "Cost"), size = 1) +
+  geom_line(aes(y = Revenue, color = "Revenue"), size = 1) +
+  geom_line(aes(y = Profit, color = "Profit"), size = 1) +
+  geom_vline(xintercept = 300, linetype = "dashed", color = "black") +
+  geom_hline(yintercept = 14500, linetype = "dashed", color = "black") +
+  scale_color_manual(values = c("Cost" = "red", "Revenue" = "green", "Profit" = "blue")) +
+  labs(x = "Quantity", y = "Dollars",
+       title = "Break-Even Analysis",
+       subtitle = "Profit Target = $14,500",
+       color = "Legend") +
+  scale_y_continuous(labels = scales::dollar) +
+  theme_minimal() +
+  theme(panel.grid.major = element_blank(), 
+        panel.grid.minor = element_blank(), 
+        panel.background = element_rect(fill = "white", colour = "black", size = 1, linetype = "solid"),
+        axis.title = element_text(size = 12),
+        plot.title = element_text(hjust = 0.5, size = 14),
+        legend.position = "bottom")
+
+# Print the plot
+print(p1)
+
+ggsave("Profit_Break_Even.png", plot = p1, width = 6, height = 4, dpi = 300)
+
+```
+

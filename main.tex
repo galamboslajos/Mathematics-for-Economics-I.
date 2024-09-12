@@ -247,19 +247,30 @@ Q &= 300
 
 \subsection{Equations with Parameters}
 
-The general equation (37) describes a whole class of linear equations where x and y are the variables. The letters a and b are called parameters, and they take on different values:
+The general equation (38) describes a whole class of linear equations where x and y are the variables. The letters a and b are called parameters, and they take on different values:
 
 \begin{equation}
 y = ax + b
 \end{equation}
 
-in economics the term of the national income identity: 
+in economics the term of the\textit{ national income identity}: 
 
 \begin{equation}
 Y = C + \bar{I}\footnote{In economics, we often use a bar over a symbol to indicate that it is fixed. An alternative notation is to use the superscript 0, e.g. Y = C +I$^0$, or the subscript 0, e.g. Y = C +I$_0$.}
 \end{equation}
 
+Economists usually call the two equations in (39) the structural form of the model, whereas in the following part is the reduced form that expresses \textbf{endogenous variables} as functions of \textbf{exogenous variables}:
 
+\begin{align*}
+Y &= C + \bar{I} \\
+C &= a + bY
+\end{align*}
+
+\begin{align*}
+Y - bY &= a + \bar{I} \\
+Y(1 - b) &= a + \bar{I} \\
+Y &= \frac{a}{1 - b} + \frac{1}{1 - b} \bar{I} \\
+\end{align*}
 
 
 \end{document}

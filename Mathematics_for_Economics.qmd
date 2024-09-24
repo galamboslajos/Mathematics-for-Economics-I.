@@ -150,3 +150,29 @@ ggsave("Profit_Break_Even.png", plot = p1, width = 6, height = 4, dpi = 300)
 
 ```
 
+```{r}
+##################### Figure 4 #####################
+##################### Non Linear Equations #####################
+# Load necessary libraries
+library(knitr)
+library(kableExtra)
+
+# Create a data frame with the cases
+df <- data.frame(
+  Case = c("Case 1", "Case 2"),
+  Condition = c("y = 1", "λ = -1/2xy^2")
+)
+
+# Create a LaTeX table
+table <- df %>%
+  kable("latex", booktabs = TRUE, caption = "Cases where the equation is zero") %>%
+  kable_styling(latex_options = "hold_position")
+
+# Save the table to a .tex file
+sink("table.tex")
+cat(table)
+sink()
+```
+
+
+

@@ -1,6 +1,9 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{graphicx} 
+\usepackage{booktabs}
+
+
 
 \title{Mathematics for Economics}
 \author{Lajos Galambos}
@@ -362,5 +365,27 @@ Non linear equations are used in economics especially for doing optimization pro
 ab &= ac \\
 \Rightarrow a &= 0 \quad \text{or} \quad b = c
 \end{align*}
+
+\textbf{Example: }
+\begin{equation*}
+\begin{split}
+    xy^2(1-y) -2 \lambda(1-y) &= 0 \\
+    (xy^2 - 2 \lambda)(1-y) &= 0
+\end{split}
+\end{equation*}
+
+\begin{table}[!h]
+
+\caption{Cases where the equation is zero}
+\centering
+\begin{tabular}[t]{ll}
+\toprule
+Case & Condition\\
+\midrule
+Case 1 & y = 1\\
+Case 2 & λ = -1/2xy\textasciicircum{}2\\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{document}

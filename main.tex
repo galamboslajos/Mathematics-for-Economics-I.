@@ -383,12 +383,13 @@ ab &= ac \\
 Case & Condition\\
 \midrule
 Case 1 & y = 1\\
-Case 2 & \lambda = -1/2xy2\\
+Case 2 & \lambda = 1/2xy2\\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \section{Miscellaneous}
+\subsection{Summation}
 
 Summations, set theory and logic is the focus of this chapter. 
 \begin{equation}
@@ -405,10 +406,12 @@ This tells us to form the sum of all the terms that result when we substitute su
     a_i = a_p + a_{p+1} + \ldots + a_q = \sum_{i=p}^{q} a_i
 \end{equation}
 
-One of the more widespread use of such summation is the \textbf{Price Index}
+One of the more widespread use of such summation is the \textbf{Price Index\footnote{In the case where the quantities q(i) are levels of consumption in the base year 0, this is called the\textbf{ Laspeyres price index}. But if the quantities q(i) are levels of consumption in the year t, this is called the \textbf{Paasche price index}.
+}}
 
 \begin{equation}
     P = \frac{\sum_{i=1}^{n} p_i q_i}{\sum_{i=1}^{n} p_{0i} q_i} \times 100
 \end{equation}
+
 
 \end{document}

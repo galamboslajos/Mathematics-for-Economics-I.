@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usepackage{graphicx} 
 \usepackage{booktabs}
+\usepackage{amsthm}
 
 
 
@@ -389,9 +390,9 @@ Case 2 & \lambda = 1/2xy2\\
 \end{table}
 
 \section{Miscellaneous}
+Summations, set theory and logic is the focus of this chapter. 
 \subsection{Summation}
 
-Summations, set theory and logic is the focus of this chapter. 
 \begin{equation}
     N_1 + N_2 + N_3 + N_4 + N_5 + N_6 = \sum_{i=1}^{6} N_i
 \end{equation}
@@ -406,12 +407,43 @@ This tells us to form the sum of all the terms that result when we substitute su
     a_i = a_p + a_{p+1} + \ldots + a_q = \sum_{i=p}^{q} a_i
 \end{equation}
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{Price_Index.png}
+\caption{FRED's Consumer Price Index}
+\label{fig:my_label}
+\end{figure}
+
 One of the more widespread use of such summation is the \textbf{Price Index\footnote{In the case where the quantities q(i) are levels of consumption in the base year 0, this is called the\textbf{ Laspeyres price index}. But if the quantities q(i) are levels of consumption in the year (t), this is called the \textbf{Paasche price index}.
 }}
 
 \begin{equation}
     P = \frac{\sum_{i=1}^{n} p_i q_i}{\sum_{i=1}^{n} p_{0i} q_i} \times 100
 \end{equation}
+
+\subsection{Rules for Sums. Newton’s Binomial Formula}
+
+Summation operations have the following properties: \textbf{additivity} and \textbf{homogeneity}.\\
+
+\textbf{Additivity Property:}
+\begin{equation}
+\sum_{i=1}^{n} (a_i + b_i) = \sum_{i=1}^{n} a_i + \sum_{i=1}^{n} b_i
+\end{equation}
+
+\textbf{Homogeneity Property:}
+\begin{equation}
+\sum_{i=1}^{n} c \cdot a_i = c \cdot \sum_{i=1}^{n} a_i
+\end{equation}
+
+\begin{proof}
+\begin{align*}
+\text{LHS: } \sum_{i=1}^{n} c \cdot a_i &= c \cdot a_1 + c \cdot a_2 + \ldots + c \cdot a_n \\
+\text{RHS: } c \cdot \sum_{i=1}^{n} a_i &= c \cdot (a_1 + a_2 + \ldots + a_n) \\
+&= c \cdot a_1 + c \cdot a_2 + \ldots + c \cdot a_n \\
+\end{align*}
+\end{proof}
+
+
 
 
 \end{document}

@@ -445,7 +445,107 @@ Summation operations have the following properties: \textbf{additivity} and \tex
 \end{align*}
 \end{proof}
 
+\textbf{What if there is nothing to index:}
+\begin{equation}
+\sum_{i=1}^{n} c  = nc 
+\end{equation} \\
 
+\textbf{Examples and proofs for the properties of the arithmetic mean:} \\
+
+
+The arithmetic mean $\mu_x$ of $T$ numbers $x_1, x_2, \ldots, x_T$ is defined as the sum of all numbers divided by $T$, the number of terms:
+
+\begin{equation}
+    \mu_x = \frac{1}{T} \sum_{i=1}^{T} x_i
+\end{equation}
+
+
+We want to prove that the sum of the deviations of $x_i$ from the mean $\mu_x$ is\textbf{ equal to zero}. Let $x_1, x_2, \dots, x_n$ be a set of $n$ data points. The deviation of each $x_i$ from the mean is given by $x_i - \mu_x$. We want to show that:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x) = 0
+\]
+
+Expanding the sum:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x) = \sum_{i=1}^{n} x_i - \sum_{i=1}^{n} \mu_x
+\]
+
+Since $\mu_x$ is the same for each $i$, we can factor it out of the second summation:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x) = \sum_{i=1}^{n} x_i - n \cdot \mu_x
+\]
+
+Substitute the definition of $\mu_x$:
+
+\[
+\mu_x = \frac{1}{n} \sum_{i=1}^{n} x_i
+\]
+
+Thus,
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x) = \sum_{i=1}^{n} x_i - n \cdot \left( \frac{1}{n} \sum_{i=1}^{n} x_i \right)
+\]
+
+Simplifying the expression:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x) = \sum_{i=1}^{n} x_i - \sum_{i=1}^{n} x_i = 0
+\]
+
+Hence, we have proven that:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x) = 0
+\] \\
+Now we want to prove that the sum of the\textbf{ squared deviations from the mean} can be written as follows:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x)^2 = \sum_{i=1}^{n} x_i^2 - n \mu_x^2
+\]
+
+The left-hand side is the sum of the squared deviations from the mean:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x)^2 = \sum_{i=1}^{n} \left( x_i^2 - 2x_i\mu_x + \mu_x^2 \right)
+\]
+
+
+Now, distribute the summation across the terms:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x)^2 = \sum_{i=1}^{n} x_i^2 - 2\mu_x \sum_{i=1}^{n} x_i + \sum_{i=1}^{n} \mu_x^2
+\]
+
+The term \( \sum_{i=1}^{n} x_i^2 \) remains unchanged. The term \( -2\mu_x \sum_{i=1}^{n} x_i \) can be simplified using the definition of the mean, \( \mu_x = \frac{1}{n} \sum_{i=1}^{n} x_i \). And \( \mu_x \cdot n = \sum_{i=1}^{n} x_i \). Thus:
+  \[
+  -2\mu_x \sum_{i=1}^{n} x_i = -2\mu_x \cdot n \mu_x = -2n \mu_x^2
+  \]
+  
+The term \( \sum_{i=1}^{n} \mu_x^2 \) is simply \( n \mu_x^2 \) because \( \mu_x^2 \) is the same for all summation terms. Now combine all the terms:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x)^2 = \sum_{i=1}^{n} x_i^2 - 2n \mu_x^2 + n \mu_x^2
+\]
+
+Simplify:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x)^2 = \sum_{i=1}^{n} x_i^2 - n \mu_x^2
+\]
+
+Thus, we have proven that:
+
+\[
+\sum_{i=1}^{n} (x_i - \mu_x)^2 = \sum_{i=1}^{n} x_i^2 - n \mu_x^2
+\] \\
+\textbf{The variance} \( \sigma_x^2 \) is given by the following equation:
+\begin{equation}
+    \sigma_x^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \mu_x)^2
+\end{equation}
 
 
 \end{document}

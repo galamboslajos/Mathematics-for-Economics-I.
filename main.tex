@@ -545,6 +545,28 @@ Thus, we have proven that:
 \textbf{The variance} \( \sigma_x^2 \) is given by the following equation:
 \begin{equation}
     \sigma_x^2 = \frac{1}{n} \sum_{i=1}^{n} (x_i - \mu_x)^2
+\end{equation} 
+
+\vspace{1cm}
+
+\textbf{Gauss' Arithmetic Series Summation Formula:}\\
+
+Gauss solved a seemingly hard problem when he found a convenient solution for the quick summation of any sequences of subsequent integers. 
+\[
+x = 1 + 2 + \ldots + (n - 1) + n
+\]
+\[
+x = n + (n - 1) + \ldots + 2 + 1
+\]
+
+First, we write the summation in an increasing and second, in a decreasing order. Now we add them up \textbf{vertically}. That yields the following equations: 
+\begin{align*}
+2x &= (1+n) + (2+(n-1)) + \ldots + ((n-1)+2) + (n+1) \\
+2x &= (1 + n) + (1 + n) + \ldots + (1 + n) = n(1 + n)
+\end{align*}
+Now, after solving for x the following general formula drops out (\textbf{Gauss' Arithmetic Series Summation}): 
+\begin{equation}
+    \sum_{i=1}^{n} = 1 + 2 + 3 \ldots + n = \frac{1}{2}n(n - 1)
 \end{equation}
 
 

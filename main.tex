@@ -569,13 +569,89 @@ Now, after solving for x the following general formula drops out (\textbf{Gauss'
     \sum_{i=1}^{n} = 1 + 2 + 3 \ldots + n = \frac{1}{2}n(n - 1)
 \end{equation} \\
 
+\vspace{1cm}
 
-\textbf{Newton's Binomial Formula:}
-Newton's binomial formula helps to write down any (a+b) with any exponent. 
+\textbf{Newton's Binomial Formula:} Newton's binomial formula helps to write down any (a+b) with any exponent. But it also comes useful when dealing with \textbf{probabilities, probability theory}. Before it could be used for probability, I need to understand how does the binomial coefficient work. The summation above contains such binomial coefficient.    
 
 \begin{equation}
 (a+b)^m = \sum_{k=0}^{m} \binom{m}{k} a^{m-k} b^{k}
 \end{equation}
+
+Here is the example: 
+
+\begin{align*}
+(a + b)^1 &= a + b \\
+(a + b)^2 &= a^2 + 2ab + b^2 \\
+(a + b)^3 &= a^3 + 3a^2b + 3ab^2 + b^3 \\
+(a + b)^4 &= a^4 + 4a^3b + 6a^2b^2 + 4ab^3 + b^4 \\
+(a + b)^5 &= a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5
+\end{align*}
+
+It is visible that example series above demonstrate different exponents: the exponents of "a" decrease from left to right, while the exponents of "b" increase from left to right. Moreover, there are different numerical coefficients for all the terms. Take the example of m=5, and solve with with the general Newton's Binomial Formula: \\
+
+For \(m = 5\), this becomes:
+
+\begin{equation*}
+(a + b)^5 = \sum_{k=0}^{5} \binom{5}{k} a^{5-k} b^{k}
+\end{equation*}
+
+Now, we calculate each term separately:
+
+\begin{align*}
+k = 0: & \quad \binom{5}{0} a^{5-0} b^{0} = 1 \cdot a^5 \cdot b^0 = a^5 \\[8pt]
+k = 1: & \quad \binom{5}{1} a^{5-1} b^{1} = 5 \cdot a^4 \cdot b = 5a^4 b \\[8pt]
+k = 2: & \quad \binom{5}{2} a^{5-2} b^{2} = 10 \cdot a^3 \cdot b^2 = 10a^3 b^2 \\[8pt]
+k = 3: & \quad \binom{5}{3} a^{5-3} b^{3} = 10 \cdot a^2 \cdot b^3 = 10a^2 b^3 \\[8pt]
+k = 4: & \quad \binom{5}{4} a^{5-4} b^{4} = 5 \cdot a \cdot b^4 = 5a b^4 \\[8pt]
+k = 5: & \quad \binom{5}{5} a^{5-5} b^{5} = 1 \cdot a^0 \cdot b^5 = b^5
+\end{align*}
+
+Combining all terms, we get:
+
+\begin{equation*}
+(a + b)^5 = a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5
+\end{equation*} \\
+
+\textbf{The binomial coefficient \(\binom{m}{k}\)} for any non-negative integer \(m\) and \(k\) is defined as:
+
+\begin{equation}
+\binom{m}{k} = \frac{m!}{k!(m - k)!}
+\end{equation}
+
+where \(m!\) (read as "\(m\) factorial") is the product of all positive integers up to \(m\), defined as:
+\begin{equation}
+m! = m \times (m - 1) \times (m - 2) \times \dots \times 1
+\end{equation}
+
+If \(k = 0\) or \(k = m\), the binomial coefficient simplifies to:
+\begin{equation}
+\binom{m}{0} = \binom{m}{m} = 1
+\end{equation} \\
+
+There is an alternative to the Binomial Coefficient, which helps to imagine the binomial problem better. \textbf{Pascal's Triangle} does the same job as the general Newton Formula with the summation. Pascal's Triangle has rows respective of the exponent (more specifically it will have m+1 rows, because the triangle starts from m=0. which is 1). If m=5, Pascal's Triangle will have 6 rows. Each entry is the sum of the numerical coefficients above (diagonally). The outer segment of Pascal's Triangle therefore, is always a series of 1-s.  
+
+\textbf{Pascal's Triangle} from \(m = 0\) to \(m = 7\):
+
+\[
+\begin{array}{c}
+\binom{0}{0} = 1 \\[8pt]
+\binom{1}{0} = 1 \quad \binom{1}{1} = 1 \\[8pt]
+\binom{2}{0} = 1 \quad \binom{2}{1} = 2 \quad \binom{2}{2} = 1 \\[8pt]
+\binom{3}{0} = 1 \quad \binom{3}{1} = 3 \quad \binom{3}{2} = 3 \quad \binom{3}{3} = 1 \\[8pt]
+\binom{4}{0} = 1 \quad \binom{4}{1} = 4 \quad \binom{4}{2} = 6 \quad \binom{4}{3} = 4 \quad \binom{4}{4} = 1 \\[8pt]
+\binom{5}{0} = 1 \quad \binom{5}{1} = 5 \quad \binom{5}{2} = 10 \quad \binom{5}{3} = 10 \quad \binom{5}{4} = 5 \quad \binom{5}{5} = 1 \\[8pt]
+\binom{6}{0} = 1 \quad \binom{6}{1} = 6 \quad \binom{6}{2} = 15 \quad \binom{6}{3} = 20 \quad \binom{6}{4} = 15 \quad \binom{6}{5} = 6 \quad \binom{6}{6} = 1 \\[8pt]
+\binom{7}{0} = 1 \quad \binom{7}{1} = 7 \quad \binom{7}{2} = 21 \quad \binom{7}{3} = 35 \quad \binom{7}{4} = 35 \quad \binom{7}{5} = 21 \quad \binom{7}{6} = 7 \quad \binom{7}{7} = 1
+\end{array}
+\] \\
+
+Now that the Newton's Binomial Formula is defined, let's take an example that relates the formula to probabilities 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Marbles.png}
+    \caption{Marbles: 11 Blue and 5 Red (N=16)}
+    \label{fig:marbles}
+\end{figure}
 
 
 

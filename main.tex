@@ -645,7 +645,10 @@ There is an alternative to the Binomial Coefficient, which helps to imagine the 
 \end{array}
 \] \\
 
-Now that the Newton's Binomial Formula is defined, let's take an example that relates the formula to probabilities 
+Now that the Newton's Binomial Formula is defined, let's take an example that relates the formula to probabilities. The following example is taking a case of independent events (often referred as cases "\textit{with replacement}"). \\
+
+\textbf{Example: } Imagine that there is a box of marbles: 11 blue and 5 red. We take a 4 marbles out (one by one \textit{with replacement}). What is the chance that we get exactly 2 blue and 2 red?
+
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.8\textwidth]{Marbles.png}
@@ -653,6 +656,24 @@ Now that the Newton's Binomial Formula is defined, let's take an example that re
     \label{fig:marbles}
 \end{figure}
 
+\textbf{Solution 1: } We can say that the probability of getting a blue marble out of the box is \(\frac{11}{16}\) while \(\frac{5}{16}\) for the red. We want 2 blues and 2 reds, so we could believe that it is just: \(\frac{11}{16}\) * \(\frac{11}{16}\) *  \(\frac{5}{16}\) * \(\frac{5}{16}\). But let's not forget that we can get these exact same amount of marbles from both colors in different orders, since the order doesn't matter. So the solution is \(\frac{11}{16}\) * \(\frac{11}{16}\) *  \(\frac{5}{16}\) * \(\frac{5}{16}\) * 6. This will certainly give large numbers in the nominator and the denominator too. \\
 
+\textbf{Solution 2: } Let's use the binomial logic and writhe the following equation: 
+\begin{align*}
+(blue + red)^n \\
+(b + r)^4 
+\end{align*}
+
+Let's use \textbf{Newton's binomial formula} for this: 
+
+\begin{equation*}
+(b+r)^4 = \sum_{k=0}^{4} \binom{4}{k} b^{4-k} r^{k}
+\end{equation*}
+
+\begin{equation*}
+(b+r)^4 = \sum_{k=0}^{4} \binom{4}{k} b^{4-k} r^{k} = b^4 + 4b^3r + 6b^2r^2 + 4br^3 + r^4
+\end{equation*}
+
+Since we already know that getting two blues has the probability of \(\frac{11}{16}\)* \(\frac{11}{16}\) and \(\frac{5}{16}\) * \(\frac{5}{16}\) for the reds we are searching for the numerical coefficient in front of \( r^2 b^2 \). The numerical coefficient of \( r^2 b^2 \) is 6 according to the solution of the formula for n=4. The final solution goes like: \(6* (\frac{11}{16})^2 (\frac{5}{16})^2 \). We also have a potential solution for other cases (which this example did not ask us to compute: like the probability of having 3 reds and 1 blue...).
 
 \end{document}

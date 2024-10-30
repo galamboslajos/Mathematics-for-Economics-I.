@@ -571,6 +571,14 @@ Now, after solving for x the following general formula drops out (\textbf{Gauss'
 
 \vspace{1cm}
 
+\textbf{Sum of Squares Formula: }
+What is the general solution if I want to compute the sum of squared numbers from \(j\) to \(n\). The sum of squares formula is given by:
+\begin{equation}
+\sum_{j=1}^{n} j^2 = \frac{n(n+1)(2n+1)}{6}
+\end{equation}
+
+\vspace{1cm}
+
 \textbf{Newton's Binomial Formula:} Newton's binomial formula helps to write down any (a+b) with any exponent. But it also comes useful when dealing with \textbf{probabilities, probability theory}. Before it could be used for probability, I need to understand how does the binomial coefficient work. The summation above contains such binomial coefficient.    
 
 \begin{equation}
@@ -678,6 +686,8 @@ Since we already know that getting two blues has the probability of \(\frac{11}{
 
 \subsection{Double Sums}
 
+Here is a spreadsheet of "i" rows and "j" columns. There are are all together "i" times "j" entries in this spreadsheet. The question now is the sum of the entries in this spreadsheet. First, we can fix a column and and sum all the rows up in that column and repeat this for all columns and finally adding up the column sum. 
+
 \[
 A = 
 \begin{bmatrix}
@@ -687,6 +697,71 @@ a_{3,1} & a_{3,2} & a_{3,3} & \dots & a_{3,j} \\
 \vdots & \vdots & \vdots & \ddots & \vdots \\
 a_{i,1} & a_{i,2} & a_{i,3} & \dots & a_{i,j} \\
 \end{bmatrix}
+\]
+
+Summing rows column by column can be written like this: 
+
+\[
+\begin{array}{cccccc}
+\sum_{i=1}^n a_{i,1} + \sum_{i=1}^n a_{i,2} + \sum_{i=1}^n a_{i,3} + \dots + \sum_{i=1}^n a_{i,j} \\
+\end{array}
+\]
+
+The \textbf{Double Sum Notation} does exactly the same with a single notation: 
+
+\[
+\sum_{i=1}^m \sum_{j=1}^n a_{i,j}
+\]
+
+where:
+\(i\) ranges from 1 to \(m\), covering all rows.
+\(j\) ranges from 1 to \(n\), covering all columns. This double summation can also be written as:
+
+\[
+\sum_{i=1}^m \sum_{j=1}^n a_{i,j} = a_{1,1} + a_{1,2} + \dots + a_{m,n}
+\]
+
+\textbf{Example: }(\textit{Solve summation by summation})
+\begin{align*}
+\sum_{i=1}^{3} \sum_{j=1}^{4} (i + 2j) &= \sum_{i=1}^{3} \left( \sum_{j=1}^{4} (i + 2j) \right) \\
+\end{align*}
+
+\textbf{First Step:}
+
+\[
+\sum_{j=1}^{4} (i + 2j) = i + 2 \cdot 1 + i + 2 \cdot 2 + i + 2 \cdot 3 + i + 2 \cdot 4
+\]
+
+\[
+= i + 2 + i + 4 + i + 6 + i + 8 = 4i + 20
+\]
+
+\[
+\sum_{j=1}^{4} (i + 2j) = 4i + 20
+\]
+
+\textbf{Second Step:}
+\[
+\sum_{i=1}^{3} (4i + 20)
+\]
+
+\[
+= (4 \cdot 1 + 20) + (4 \cdot 2 + 20) + (4 \cdot 3 + 20)
+\]
+\[
+= (4 + 20) + (8 + 20) + (12 + 20)
+\]
+\[
+= 24 + 28 + 32
+\]
+
+Finally, summing these values:
+\[
+\sum_{i=1}^{3} \sum_{j=1}^{4} (i + 2j) = 84 = 24 + 28 + 32 
+\]
+
+\[
+\sum_{i=1}^{m} \sum_{j=1}^{n} (i + j^2)
 \]
 
 \end{document}
